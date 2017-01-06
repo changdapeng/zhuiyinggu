@@ -1,0 +1,2289 @@
+{
+	"id": "b15e850f-4b39-844b-8087-4867e99e69cf",
+	"name": "cms_project",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "32211f5e-9101-c5dd-0071-3294a552e65d",
+			"name": "accounts",
+			"description": "",
+			"order": [
+				"43f49ef1-9044-f28d-e8b0-e0ba6322bf38",
+				"807816b9-799f-a292-1f64-f5adc6f80959",
+				"6c033e09-a463-059b-dd6a-e44d2400caca",
+				"717ccd73-6170-6dd8-0c03-07e680f4463b",
+				"ee571ed6-1cb8-f2c2-80e3-78b3c991f51e",
+				"cce80b30-0c96-8123-35b7-a2293265b799",
+				"f46aefb5-669a-2b50-fbd1-57542e8ccc33",
+				"0a78756c-df49-a7ab-53b5-4cb4e79675f7",
+				"c288630c-97da-16eb-765c-043f366f5c7d",
+				"b948ec25-9a7b-2631-398e-f0b8aee52c36"
+			],
+			"owner": "614685",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf"
+		},
+		{
+			"id": "bdfebd78-d6a3-7425-1825-a3705e64bcbc",
+			"name": "apk_version",
+			"description": "",
+			"order": [
+				"9bbca3c3-0039-c122-ebe2-1c3e5452609c",
+				"acc55ea4-5200-e46e-0905-6295dc81c08d",
+				"2a2047be-880d-28ee-0fb2-75bea4c7bb1d"
+			],
+			"owner": "614685"
+		}
+	],
+	"timestamp": 1465264650580,
+	"owner": "614685",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "0a78756c-df49-a7ab-53b5-4cb4e79675f7",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://www.zhuiyinggu.com:33333/accounts/userprofile/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": "{\n      \"nickname\": \"aabb\",\n      \"date_of_birth\": \"2016-11-23\",\n      \"user\": {\n        \"email\": \"aabb@163.com\",\n        \"password\": \"aabb\",\n        \"name\": \"aabb\",\n        \"phone\": \"aabb\",\n        \"unid\": 1223\n      }\n    }",
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468823975580,
+			"name": "http://www.zhuiyinggu.com:33333/accounts/userprofile/",
+			"description": "UserProfile 的 GET POST",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 236,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:23:39 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Location",
+							"key": "Location",
+							"value": "http://www.zhuiyinggu.com:33333/accounts/userprofile/aabb/",
+							"description": "Used in redirection, or when a new resource has been created."
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/userprofile/aabb/\",\"nickname\":\"aabb\",\"date_of_birth\":\"2016-11-23\",\"user\":{\"email\":\"aabb@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/22/\",\"password\":\"pbkdf2_sha256$24000$CCisI6ROhI49$6V9OdHqhcn7clyRmLJYde+t2iaVR8afnOgSRf78rHMc=\",\"name\":\"aabb\",\"phone\":\"aabb\",\"unid\":1223}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "e582ea0d-1eba-3b7d-5afc-cb0feaacbb5c",
+					"name": "POST 增加前台用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/userprofile/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"data": "{\n      \"nickname\": \"aabb\",\n      \"date_of_birth\": \"2016-11-23\",\n      \"user\": {\n        \"email\": \"aabb@163.com\",\n        \"password\": \"aabb\",\n        \"name\": \"aabb\",\n        \"phone\": \"aabb\",\n        \"unid\": 1223\n      }\n    }",
+						"method": "POST",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 78,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:24:06 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":3,\"next\":null,\"previous\":null,\"results\":[{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/userprofile/123/\",\"nickname\":\"123\",\"date_of_birth\":null,\"user\":{\"email\":\"123@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/13/\",\"password\":\"!2H6E7qRtR0xmXuKiDv91n21OUbh0uXdRmz5fNH5u\",\"name\":\"1123\",\"phone\":\"1123\",\"unid\":123}},{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/userprofile/44456/\",\"nickname\":\"44456\",\"date_of_birth\":null,\"user\":{\"email\":\"456@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/14/\",\"password\":\"!6Z12nkR9SWJWRi79TBIliPstdDU39Q9hcxocdZO8\",\"name\":\"456\",\"phone\":\"456\",\"unid\":456}},{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/userprofile/aabb/\",\"nickname\":\"aabb\",\"date_of_birth\":\"2016-11-23\",\"user\":{\"email\":\"aabb@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/22/\",\"password\":\"pbkdf2_sha256$24000$CCisI6ROhI49$6V9OdHqhcn7clyRmLJYde+t2iaVR8afnOgSRf78rHMc=\",\"name\":\"aabb\",\"phone\":\"aabb\",\"unid\":1223}}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "5b277fd0-b2d8-632c-6a17-b25c6bee76f1",
+					"name": "GET 获取前台用户列表",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/userprofile/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"data": "{\n      \"nickname\": \"aabb\",\n      \"date_of_birth\": \"2016-11-23\",\n      \"user\": {\n        \"email\": \"aabb@163.com\",\n        \"password\": \"aabb\",\n        \"name\": \"aabb\",\n        \"phone\": \"aabb\",\n        \"unid\": 1223\n      }\n    }",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
+		},
+		{
+			"id": "2a2047be-880d-28ee-0fb2-75bea4c7bb1d",
+			"headers": "",
+			"url": "http://www.zhuiyinggu.com:33333/apk/apk_version/newest/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468825387864,
+			"name": "http://www.zhuiyinggu.com:33333/apk/apk_version/newest/",
+			"description": "获取最新的一个apk_version",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 91,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 07:02:26 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":3,\"next\":null,\"previous\":null,\"results\":{\"name\":\"Face2Face\",\"version\":\"0.0.2\",\"create_data\":\"2016-07-06\",\"creator\":\"huiyu\",\"address\":\"http://218.206.176.135:9099/apk/FaceToFace.apk\",\"url\":\"http://www.zhuiyinggu.com:33333/apk/apk_version/3/\"}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "6b36be07-05b3-75fa-1b02-55b52538d1a9",
+					"name": "GET 获取最新的apk_version",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/apk/apk_version/newest/",
+						"headers": [],
+						"data": null,
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
+		},
+		{
+			"id": "43f49ef1-9044-f28d-e8b0-e0ba6322bf38",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://www.zhuiyinggu.com:33333/accounts/gettoken/",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://www.zhuiyinggu.com:33333/accounts/gettoken/",
+			"description": "Get Token 的 POST 方法",
+			"descriptionFormat": "html",
+			"time": 1468807063839,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 281,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "POST, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 01:58:03 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept, Cookie",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "\"c568a0414b8c35ab1bd720b78609d24d3c07b99a\"",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "25bea7d8-939b-1cc7-fe82-ea3089042f58",
+					"name": "1111111@163.com Token",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/gettoken/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": "{\n    \"name\":\"1111111@163.com\",\n    \"password\":\"1111111\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "32211f5e-9101-c5dd-0071-3294a552e65d",
+			"rawModeData": "{\n    \"name\":\"1111111@163.com\",\n    \"password\":\"1111111\"\n}"
+		},
+		{
+			"id": "6c033e09-a463-059b-dd6a-e44d2400caca",
+			"headers": "Content-Type: application/json\nAuthorization: Token    c568a0414b8c35ab1bd720b78609d24d3c07b99a\n",
+			"url": "http://www.zhuiyinggu.com:33333/accounts/users/20/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468823969645,
+			"name": "http://www.zhuiyinggu.com:33333/accounts/users/20/",
+			"description": "对于每个 User 的 GET PUT DELETE 操作",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 176,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 02:56:46 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"email\":\"1111111111111111@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/20/\",\"password\":\"!NAhuWSTsxJ9lIYCGcEE23EtkvVybGZdt71xMwznV\",\"name\":\"1111111\",\"phone\":\"1111111\",\"unid\":1111111}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "b19842ab-1855-10e2-4569-282ca6ce5d2c",
+					"name": "PUT 更新",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/users/20/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token    c568a0414b8c35ab1bd720b78609d24d3c07b99a",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"data": "{\n    \"email\": \"1111111111111111@163.com\"\n    \n  }",
+						"method": "PUT",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 109,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 02:57:19 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "false",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "9f78afb4-3da0-d3e4-3823-30ec05a73fa0",
+					"name": "DELETE 删除",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/users/20/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token    c568a0414b8c35ab1bd720b78609d24d3c07b99a",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"data": "{\n    \"email\": \"1111111111111111@163.com\"\n    \n  }",
+						"method": "DELETE",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 85,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 03:02:19 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"email\":\"1111111111111111@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/20/\",\"password\":\"!NAhuWSTsxJ9lIYCGcEE23EtkvVybGZdt71xMwznV\",\"name\":\"1111111\",\"phone\":\"1111111\",\"unid\":1111111}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "645d4f8f-e50e-2782-04e0-74baf6deeab8",
+					"name": "GET 获取用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/users/20/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token    c568a0414b8c35ab1bd720b78609d24d3c07b99a",
+								"enabled": true
+							}
+						],
+						"data": "{\n    \"email\": \"1111111111111111@163.com\"\n    \n  }",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			],
+			"rawModeData": ""
+		},
+		{
+			"id": "717ccd73-6170-6dd8-0c03-07e680f4463b",
+			"headers": "Content-Type: application/json\n//Authorization: Token    c568a0414b8c35ab1bd720b78609d24d3c07b99a\n",
+			"url": "http://www.zhuiyinggu.com:33333/accounts/users/20/active_user/",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://www.zhuiyinggu.com:33333/accounts/users/20/active_user/",
+			"description": "对于以删除的 User 的激活 ",
+			"descriptionFormat": "html",
+			"time": 1468811145802,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 117,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 03:37:32 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "true",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "93f1ad99-f0da-323c-7cd4-91b70362829c",
+					"name": "GET 激活指定用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/users/20/active_user/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token    c568a0414b8c35ab1bd720b78609d24d3c07b99a",
+								"enabled": false
+							}
+						],
+						"data": "{\n    \"email\": \"1111111111111111@163.com\"\n    \n  }",
+						"method": "GET",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "32211f5e-9101-c5dd-0071-3294a552e65d",
+			"rawModeData": "{\n    \"email\": \"1111111111111111@163.com\"\n    \n  }"
+		},
+		{
+			"id": "807816b9-799f-a292-1f64-f5adc6f80959",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://www.zhuiyinggu.com:33333/accounts/users/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468812934922,
+			"name": "http://www.zhuiyinggu.com:33333/accounts/user/",
+			"description": "MyUser 对象的 get post 方法",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 113,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 03:33:41 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":20,\"next\":\"http://www.zhuiyinggu.com:33333/accounts/users/?page=2\",\"previous\":null,\"results\":[{\"email\":\"AnonymousUser\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/1/\",\"password\":\"!OPxEshavAmhRyBPzt7j4t7B0zGqkNYtBofnqKqsI\",\"name\":\"\",\"phone\":\"\",\"unid\":0},{\"email\":\"11111@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/10/\",\"password\":\"pbkdf2_sha256$24000$aP4n3nBIqFup$3Wy2gyfSBBN11Wa0yk8MtyeHSB04o1jIj1B+XNnw604=\",\"name\":\"11111\",\"phone\":\"11111\",\"unid\":2},{\"email\":\"111111@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/20/\",\"password\":\"!bahDlrasbgLTL2kWSNE4CdRFMVmHwyVK5W8JEohn\",\"name\":\"1111111\",\"phone\":\"1111111\",\"unid\":1111111},{\"email\":\"123@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/13/\",\"password\":\"!2H6E7qRtR0xmXuKiDv91n21OUbh0uXdRmz5fNH5u\",\"name\":\"1123\",\"phone\":\"1123\",\"unid\":123},{\"email\":\"22@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/4/\",\"password\":\"!sOm5J26fen0qNcnamygQyky6SqpDm7QwSFE6wmex\",\"name\":\"22\",\"phone\":\"22\",\"unid\":1},{\"email\":\"11@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/5/\",\"password\":\"!WCfrtJpgSwjKPDXyKzgLPBN9tddrw5UnLsM3Sg0B\",\"name\":\"222\",\"phone\":\"222\",\"unid\":20},{\"email\":\"2a2a2a@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/21/\",\"password\":\"pbkdf2_sha256$24000$qjFZYcPOw7Ny$NvVNv1VhJTN402yo7YnJ9ZP296ahALFimKsm+mTjrh8=\",\"name\":\"2a2a2a\",\"phone\":\"2a2a2a\",\"unid\":213123},{\"email\":\"333@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/6/\",\"password\":\"pbkdf2_sha256$24000$uVP4QyTmOyXa$szdUST/+F4EgMMydzZPYfTkQq425X/6Zh6hl6zaaOBg=\",\"name\":\"333\",\"phone\":\"333\",\"unid\":4},{\"email\":\"3333@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/15/\",\"password\":\"pbkdf2_sha256$24000$TLRxsAvYjSYs$ByMpsLgtZQBJJunmogYaBcs7aoEWISsBqpmRf5s/Ei4=\",\"name\":\"3333\",\"phone\":\"3333\",\"unid\":3333},{\"email\":\"444@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/7/\",\"password\":\"pbkdf2_sha256$24000$eDRLabXjDUG5$O0L8Z9pmDv/jlcoHOnZpYjUEgIv37qv/2gicOJ/jIhQ=\",\"name\":\"444\",\"phone\":\"444\",\"unid\":5}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "67927108-c6bc-6be0-99ba-39358b75146c",
+					"name": "GET 获取user 的整个列表",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/users/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": "{\n    \"email\": \"1111111@163.com\",\n    \"password\": \"1111111\",\n    \"name\": \"1111111\",\n    \"phone\": \"1111111\",\n    \"unid\": 1111111\n  }",
+						"method": "GET",
+						"dataMode": "raw"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created"
+					},
+					"time": 483,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS",
+							"description": ""
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 01:53:11 GMT",
+							"description": ""
+						},
+						{
+							"name": "Location",
+							"key": "Location",
+							"value": "http://www.zhuiyinggu.com:33333/accounts/users/20/",
+							"description": ""
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": ""
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept, Cookie",
+							"description": ""
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": ""
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"email\":\"1111111@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/20/\",\"password\":\"pbkdf2_sha256$24000$FN2I4MWG8SpB$QBpvRaMjPJA7H+ESa2OICCz6pQi7j+FYKYSZKy6qCHs=\",\"name\":\"1111111\",\"phone\":\"1111111\",\"unid\":1111111}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"isSample": true,
+					"scrollToResult": false,
+					"runTests": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "16e189a9-8eee-89ba-1fa3-4cb789569341",
+					"name": "POST 增加User 用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/users/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": "{\n    \"email\": \"1111111@163.com\",\n    \"password\": \"1111111\",\n    \"name\": \"1111111\",\n    \"phone\": \"1111111\",\n    \"unid\": 1111111\n  }",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{\n    \"email\": \"1111111@163.com\",\n    \"password\": \"1111111\",\n    \"name\": \"1111111\",\n    \"phone\": \"1111111\",\n    \"unid\": 1111111\n  }"
+		},
+		{
+			"id": "9bbca3c3-0039-c122-ebe2-1c3e5452609c",
+			"headers": "Authorization: Token ecc837ac7f794e4cba255b62209c9e91e9829ce2\nContent-Type: application/json\n",
+			"url": "http://www.zhuiyinggu.com:33333/apk/apk_version/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468824767023,
+			"name": "http://www.zhuiyinggu.com:33333/apk/apk_version/",
+			"description": "",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 71,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:41:19 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":3,\"next\":null,\"previous\":null,\"results\":[{\"name\":\"Face2Face\",\"version\":\"0.0.2\",\"create_data\":\"2016-07-06\",\"creator\":\"huiyu\",\"address\":\"http://218.206.176.135:9099/apk/FaceToFace.apk\",\"url\":\"http://www.zhuiyinggu.com:33333/apk/apk_version/3/\"},{\"name\":\"Face2Face\",\"version\":\"0.0.1\",\"create_data\":\"2016-07-05\",\"creator\":\"huiyu\",\"address\":\"http://218.206.176.135:9099/apk/FaceToFace.apk\",\"url\":\"http://www.zhuiyinggu.com:33333/apk/apk_version/2/\"},{\"name\":\"Face2Face\",\"version\":\"0.0.0\",\"create_data\":\"2016-07-05\",\"creator\":\"huiyu\",\"address\":\"http://218.206.176.135:9099/apk/FaceToFace.apk\",\"url\":\"http://www.zhuiyinggu.com:33333/apk/apk_version/1/\"}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "ddd9548b-2127-3736-1257-fdc9136eb8ac",
+					"name": "GET 获取apk的整个version列表",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/apk/apk_version/",
+						"headers": [],
+						"data": null,
+						"method": "GET",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 91,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:44:52 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Location",
+							"key": "Location",
+							"value": "http://www.zhuiyinggu.com:33333/apk/apk_version/4/",
+							"description": "Used in redirection, or when a new resource has been created."
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"name\":\"Face2Face\",\"version\":\"0.0.6\",\"create_data\":\"2016-07-06\",\"creator\":\"huiyu\",\"address\":\"http://218.206.176.135:9099/apk/FaceToFace.apk\",\"url\":\"http://www.zhuiyinggu.com:33333/apk/apk_version/4/\"}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "618eb31b-b807-8e48-eb27-b650a23f519e",
+					"name": "POST 后台用户可以创建一个apk_version",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/apk/apk_version/",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token ecc837ac7f794e4cba255b62209c9e91e9829ce2",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"data": "{\n      \"name\": \"Face2Face\",\n      \"version\": \"0.0.6\",\n      \"create_data\": \"2016-07-06\",\n      \"creator\": \"huiyu\",\n      \"address\": \"http://218.206.176.135:9099/apk/FaceToFace.apk\"\n    }",
+						"method": "POST",
+						"dataMode": "params"
+					}
+				}
+			],
+			"rawModeData": "{\n      \"version\": \"0.0.7\"\n    }"
+		},
+		{
+			"id": "acc55ea4-5200-e46e-0905-6295dc81c08d",
+			"headers": "Content-Type: application/json\nAuthorization: Token ecc837ac7f794e4cba255b62209c9e91e9829ce2\n",
+			"url": "http://www.zhuiyinggu.com:33333/apk/apk_version/4/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468824755677,
+			"name": "http://www.zhuiyinggu.com:33333/apk/apk_version/4/",
+			"description": "apk_version 的单个对象的 GET PUT DELETE 操作",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 99,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:50:30 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"name\":\"Face2Face\",\"version\":\"0.0.9\",\"create_data\":\"2016-07-06\",\"creator\":\"huiyu\",\"address\":\"http://218.206.176.135:9099/apk/FaceToFace.apk\",\"url\":\"http://www.zhuiyinggu.com:33333/apk/apk_version/4/\"}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "512a0d13-1283-f2b0-818a-7c0b6cc6d4d0",
+					"name": "GET 获得apk_version的单个对象",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/apk/apk_version/4/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token ecc837ac7f794e4cba255b62209c9e91e9829ce2",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"data": "{\n  \"version\": \"0.0.9\"\n}",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 116,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:51:38 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"name\":\"Face2Face\",\"version\":\"0.0.6\",\"create_data\":\"2016-07-06\",\"creator\":\"huiyu\",\"address\":\"http://218.206.176.135:9099/apk/FaceToFace.apk\",\"url\":\"http://www.zhuiyinggu.com:33333/apk/apk_version/4/\"}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "3e7f01df-0508-745d-60f3-1da4d7f29e23",
+					"name": "PUT 更新apk_version的单个对象",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/apk/apk_version/4/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token ecc837ac7f794e4cba255b62209c9e91e9829ce2",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"data": "{\n  \"version\": \"0.0.6\"\n}",
+						"method": "PUT",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 204,
+						"name": "No Content",
+						"detail": "The server successfully processed the request, but is not returning any content."
+					},
+					"time": 104,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "0",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:52:07 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "",
+					"language": "html",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "f2922985-7a42-76fa-7d0e-998dc22f0ed9",
+					"name": "DELETE 删除apk_version的单个对象",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/apk/apk_version/4/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token ecc837ac7f794e4cba255b62209c9e91e9829ce2",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"data": "{\n  \"version\": \"0.0.6\"\n}",
+						"method": "DELETE",
+						"dataMode": "params"
+					}
+				}
+			],
+			"rawModeData": "{\n  \"version\": \"0.0.6\"\n}"
+		},
+		{
+			"id": "b948ec25-9a7b-2631-398e-f0b8aee52c36",
+			"headers": "",
+			"url": "http://www.zhuiyinggu.com:33333/accounts/userprofile/aabbcc/active_user/",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://www.zhuiyinggu.com:33333/accounts/userprofile/aabbcc/active_user/",
+			"description": "激活前台单个已删除用户",
+			"descriptionFormat": "html",
+			"time": 1468823451570,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 82,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:33:32 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "true",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "78696109-ee95-13ea-c8f8-c1a62499f369",
+					"name": "GET 激活已删除前台用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/userprofile/aabbcc/active_user/",
+						"headers": [],
+						"data": null,
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "32211f5e-9101-c5dd-0071-3294a552e65d"
+		},
+		{
+			"id": "c288630c-97da-16eb-765c-043f366f5c7d",
+			"headers": "Content-Type: application/json\nAuthorization: Token 8e0f1d12c12c9d356ca376cbc862a0d11aea303b\n",
+			"url": "http://www.zhuiyinggu.com:33333/accounts/userprofile/aabbcc/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468823979367,
+			"name": "http://www.zhuiyinggu.com:33333/accounts/userprofile/aabb/",
+			"description": "前台单个用户的 GET PUT DELETE 方法",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"time": 78,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": ""
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:31:02 GMT",
+							"description": ""
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": ""
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": ""
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": ""
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/userprofile/aabbcc/\",\"nickname\":\"aabbcc\",\"date_of_birth\":\"2016-11-23\",\"user\":{\"email\":\"aabbcc@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/22/\",\"password\":\"!C5oiZckVPmcLHqmDE4ZtcNNDSkJCrDmEfa4taOof\",\"name\":\"aabb\",\"phone\":\"aabb\",\"unid\":1223}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "a7558558-92a7-cf3a-8f44-576d14a411bc",
+					"name": "GET 获取前台单个用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/userprofile/aabbcc/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 8e0f1d12c12c9d356ca376cbc862a0d11aea303b",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"data": "{\n  \"nickname\": \"aabbcc\",\n  \"user\": {\n    \"email\": \"aabbcc@163.com\"\n  }\n}",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 104,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:37:38 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/userprofile/abaabb/\",\"nickname\":\"abaabb\",\"date_of_birth\":\"2016-11-23\",\"user\":{\"email\":\"abaabb@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/22/\",\"password\":\"!unJSxI3qP5kBttdf7zPL5RKJIfNzlascdTe4c4Dq\",\"name\":\"aabb\",\"phone\":\"aabb\",\"unid\":1223}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "222bd14d-af4a-e42a-4a40-2645b5af55b9",
+					"name": "PUT 更新前台指定用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/userprofile/aaabb/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 8e0f1d12c12c9d356ca376cbc862a0d11aea303b",
+								"enabled": true
+							}
+						],
+						"data": "{\n  \"nickname\": \"abaabb\",\n  \"user\": {\n    \"email\": \"abaabb@163.com\"\n  }\n}",
+						"method": "PUT",
+						"dataMode": "raw"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 88,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:38:10 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "false",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "a72840e8-1348-3c67-8390-efb0f90404d6",
+					"name": "DELETE 删除前天指定用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/userprofile/abaabb/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 8e0f1d12c12c9d356ca376cbc862a0d11aea303b",
+								"enabled": true
+							}
+						],
+						"data": "{\n  \"nickname\": \"abaabb\",\n  \"user\": {\n    \"email\": \"abaabb@163.com\"\n  }\n}",
+						"method": "DELETE",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{\n  \"nickname\": \"abaabb\",\n  \"user\": {\n    \"email\": \"abaabb@163.com\"\n  }\n}"
+		},
+		{
+			"id": "cce80b30-0c96-8123-35b7-a2293265b799",
+			"headers": "",
+			"url": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/4444/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": "{\n  \"nickname\": \"44444\",\n  \"user\": {\n    \"email\": \"44444@163.com\"\n  }\n}",
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468812915108,
+			"name": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/4444/",
+			"description": "后台指定用户的 GET PUT DELETE 操作",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 84,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 03:15:36 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/4444/\",\"nickname\":\"4444\",\"date_of_birth\":\"2016-06-10\",\"user\":{\"email\":\"4444@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/16/\",\"password\":\"pbkdf2_sha256$24000$BslHjMABaEZJ$CBsdIRkUmqs0Dw23rpWkq5HopW9HndGp4U+nUHj3MCg=\",\"name\":\"4444\",\"phone\":\"4444\",\"unid\":4444}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "3a6bc9be-5fbb-efd6-5aae-63f1d3b7d88a",
+					"name": "GET 获取后台指定用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/4444/",
+						"headers": [],
+						"data": null,
+						"method": "GET",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 158,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 03:17:58 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/44444/\",\"nickname\":\"44444\",\"date_of_birth\":\"2016-06-10\",\"user\":{\"email\":\"44444@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/16/\",\"password\":\"!puG6IsxVeVOlc4sMB03Iy3UA3tN8XORJ6SSRyZ4L\",\"name\":\"4444\",\"phone\":\"4444\",\"unid\":4444}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "8bac21aa-3642-c59e-e1a3-85360a758f50",
+					"name": "PUT 更新指定后台用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/4444/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 792843143284b62f7e722ac6405defeff080bbf0",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"data": "{\n  \"nickname\": \"44444\",\n  \"user\": {\n    \"email\": \"44444@163.com\"\n  }\n}",
+						"method": "PUT",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 90,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 03:18:49 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "false",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "8523e1d7-ca9e-decf-f9dd-e842b11548e7",
+					"name": "DELETE 删除后台指定用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/44444/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 792843143284b62f7e722ac6405defeff080bbf0",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"data": "{\n  \"nickname\": \"44444\",\n  \"user\": {\n    \"email\": \"44444@163.com\"\n  }\n}",
+						"method": "DELETE",
+						"dataMode": "params"
+					}
+				}
+			]
+		},
+		{
+			"id": "ee571ed6-1cb8-f2c2-80e3-78b3c991f51e",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468812925237,
+			"name": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/",
+			"description": "SystemUserProfile 用户的 GET POST 操作",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 412,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 03:14:25 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Location",
+							"key": "Location",
+							"value": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/2a2a2a/",
+							"description": "Used in redirection, or when a new resource has been created."
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/2a2a2a/\",\"nickname\":\"2a2a2a\",\"date_of_birth\":\"2016-06-20\",\"user\":{\"email\":\"2a2a2a@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/21/\",\"password\":\"pbkdf2_sha256$24000$qjFZYcPOw7Ny$NvVNv1VhJTN402yo7YnJ9ZP296ahALFimKsm+mTjrh8=\",\"name\":\"2a2a2a\",\"phone\":\"2a2a2a\",\"unid\":213123}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "fa8e8848-7b10-60c7-f2f9-5d3427305912",
+					"name": "POST 增加后台用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"data": "{\n      \"nickname\": \"2a2a2a\",\n      \"date_of_birth\": \"2016-06-20\",\n      \"user\": {\n        \"email\": \"2a2a2a@163.com\",\n        \"password\": \"2a2a2a\",\n        \"name\": \"2a2a2a\",\n        \"phone\": \"2a2a2a\",\n        \"unid\": 213123\n      }\n    }",
+						"method": "POST",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 99,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 03:14:53 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"count\":9,\"next\":null,\"previous\":null,\"results\":[{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/22/\",\"nickname\":\"22\",\"date_of_birth\":\"2016-06-10\",\"user\":{\"email\":\"11@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/5/\",\"password\":\"!WCfrtJpgSwjKPDXyKzgLPBN9tddrw5UnLsM3Sg0B\",\"name\":\"222\",\"phone\":\"222\",\"unid\":20}},{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/22222/\",\"nickname\":\"22222\",\"date_of_birth\":\"2016-06-20\",\"user\":{\"email\":\"22@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/4/\",\"password\":\"!sOm5J26fen0qNcnamygQyky6SqpDm7QwSFE6wmex\",\"name\":\"22\",\"phone\":\"22\",\"unid\":1}},{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/2a2a2a/\",\"nickname\":\"2a2a2a\",\"date_of_birth\":\"2016-06-20\",\"user\":{\"email\":\"2a2a2a@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/21/\",\"password\":\"pbkdf2_sha256$24000$qjFZYcPOw7Ny$NvVNv1VhJTN402yo7YnJ9ZP296ahALFimKsm+mTjrh8=\",\"name\":\"2a2a2a\",\"phone\":\"2a2a2a\",\"unid\":213123}},{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/3333/\",\"nickname\":\"3333\",\"date_of_birth\":\"2016-06-10\",\"user\":{\"email\":\"3333@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/15/\",\"password\":\"pbkdf2_sha256$24000$TLRxsAvYjSYs$ByMpsLgtZQBJJunmogYaBcs7aoEWISsBqpmRf5s/Ei4=\",\"name\":\"3333\",\"phone\":\"3333\",\"unid\":3333}},{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/4444/\",\"nickname\":\"4444\",\"date_of_birth\":\"2016-06-10\",\"user\":{\"email\":\"4444@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/16/\",\"password\":\"pbkdf2_sha256$24000$BslHjMABaEZJ$CBsdIRkUmqs0Dw23rpWkq5HopW9HndGp4U+nUHj3MCg=\",\"name\":\"4444\",\"phone\":\"4444\",\"unid\":4444}},{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/5555/\",\"nickname\":\"5555\",\"date_of_birth\":\"2016-06-10\",\"user\":{\"email\":\"5555@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/17/\",\"password\":\"pbkdf2_sha256$24000$7ilxJYelsJf0$j/avx7nt/Hau8LBVUCwW2k+8xwbgnaHZHNcTkyDzEfg=\",\"name\":\"5555\",\"phone\":\"5555\",\"unid\":5555}},{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/6666/\",\"nickname\":\"6666\",\"date_of_birth\":\"2016-06-10\",\"user\":{\"email\":\"6666@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/18/\",\"password\":\"pbkdf2_sha256$24000$ZZh1EtmWcNtS$/iT6BjHRXWN13zEr13TYwr1WeoTdwGXGieJoSr8euBA=\",\"name\":\"6666\",\"phone\":\"6666\",\"unid\":6666}},{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/8888/\",\"nickname\":\"8888\",\"date_of_birth\":\"2016-06-10\",\"user\":{\"email\":\"8888@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/19/\",\"password\":\"pbkdf2_sha256$24000$OXTDPV2WIhlE$g5b5IEhlKoqKVJqBSZW1d4sbnc1RkxzXoPAvDnKd2Mw=\",\"name\":\"8888\",\"phone\":\"8888\",\"unid\":8888}},{\"url\":\"http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/huiyu/\",\"nickname\":\"huiyu\",\"date_of_birth\":\"2016-06-20\",\"user\":{\"email\":\"huiyu@163.com\",\"url\":\"http://www.zhuiyinggu.com:33333/accounts/users/2/\",\"password\":\"pbkdf2_sha256$24000$TcpLoJAW7kSM$PA58kqqqym0OY8L+dMckGVbI5MqVR2GMpX7VFbj7lKY=\",\"name\":\"huiyu\",\"phone\":\"18612113772\",\"unid\":1}}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "4afe5a8e-600a-d935-a79b-bf25a1fd3d4c",
+					"name": "GET 获取后台用户列表",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"data": "{\n      \"nickname\": \"2a2a2a\",\n      \"date_of_birth\": \"2016-06-20\",\n      \"user\": {\n        \"email\": \"2a2a2a@163.com\",\n        \"password\": \"2a2a2a\",\n        \"name\": \"2a2a2a\",\n        \"phone\": \"2a2a2a\",\n        \"unid\": 213123\n      }\n    }",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			],
+			"rawModeData": "{\n      \"nickname\": \"2a2a2a\",\n      \"date_of_birth\": \"2016-06-20\",\n      \"user\": {\n        \"email\": \"2a2a2a@163.com\",\n        \"password\": \"2a2a2a\",\n        \"name\": \"2a2a2a\",\n        \"phone\": \"2a2a2a\",\n        \"unid\": 213123\n      }\n    }"
+		},
+		{
+			"id": "f46aefb5-669a-2b50-fbd1-57542e8ccc33",
+			"headers": "",
+			"url": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/44444/active_user/",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "b15e850f-4b39-844b-8087-4867e99e69cf",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/44444/active_user/",
+			"description": "后台指定已删除用户的激活 GET 方法",
+			"descriptionFormat": "html",
+			"time": 1468812808355,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 151,
+					"headers": [
+						{
+							"name": "Allow",
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS",
+							"description": "Valid actions for a specified resource. To be used for a 405 Method not allowed"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 18 Jul 2016 06:36:41 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.4.3",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "true",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "b5d47a2f-6c38-9744-cc30-63061ff3560c",
+					"name": "GET 激活后台已删除用户",
+					"request": {
+						"url": "http://www.zhuiyinggu.com:33333/accounts/systemuserprofile/44444/active_user/",
+						"headers": [],
+						"data": null,
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "32211f5e-9101-c5dd-0071-3294a552e65d"
+		}
+	]
+}
