@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7qpq#%^bgzoxh(ez2!i^7pkq1i7d#1(+^fy*dw$5(v+y)0!kt4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False	
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -123,6 +123,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT='/home/webpy/static_data/'
+
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
 
 AUTH_USER_MODEL = 'accounts.MyUser'
 
@@ -137,6 +144,7 @@ AUTHENTICATION_BACKENDS = (
 # -----------------------
 
 REST_FRAMEWORK = {
+
     #设置认证方式 为 rest 的token认证
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
