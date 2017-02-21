@@ -4,3 +4,5 @@
 /accounts/migrations/
 /uwsgi.log
 /uwsgi.pid
+/blog/__pycache__/
+/blog/migrations/
