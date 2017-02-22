@@ -12,6 +12,7 @@ from django.contrib.auth.models import (
 from django.conf import settings
 
 
+
 SYSTEM_USER = 'system_user' #后台 用户
 COMMON_USER = 'common_user' #普通 用户
 
@@ -70,7 +71,10 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     )
     name = models.CharField(max_length=20, unique=True)
     phone = models.CharField(max_length=20, unique=True)
+    qq = models.CharField(max_length=20)
+    website = models.CharField(max_length=50)
     unid = models.IntegerField(default=0)
+    image = models.ImageField()
     is_staff = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
@@ -101,12 +105,14 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
 
         
 # 后台管理员用户
+# level 管理员级别  0（默认级别）：只可以管理自己的内容  1：可以管理同组的内容
 #---------------
 
 class SystemUserProfile(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='systemuser')
     nickname = models.CharField(max_length=20, unique=True)
     date_of_birth = models.DateField(null=True)
+    level = models.IntegerField(default=0) 
     
     def __str__(self):
         return self.user.email
