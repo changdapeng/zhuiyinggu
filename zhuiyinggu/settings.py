@@ -120,15 +120,20 @@ USE_L10N = True
 USE_TZ = True
 
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/webpy/media_data/zhuiyinggu/'
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT='/home/webpy/static_data/'
+STATIC_ROOT='/home/webpy/static_data/zhuiyinggu/'
 
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static_data"),
 )
 
 
