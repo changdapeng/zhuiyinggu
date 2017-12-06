@@ -1,3 +1,8 @@
+from django.db import models
+
+# Create your models here.
+
+
 """
 accounts/models.py
 
@@ -12,7 +17,6 @@ from django.contrib.auth.models import (
 from django.conf import settings
 
 
-
 SYSTEM_USER = 'system_user' #后台 用户
 COMMON_USER = 'common_user' #普通 用户
 
@@ -20,8 +24,7 @@ COMMON_USER = 'common_user' #普通 用户
 
 
 # MyUser模型管理器
-#-----------------
-
+#----------------
 class MyUserManager(BaseUserManager):
     def create_user(self, email, name, phone, unid, password=None):
         """
@@ -62,7 +65,6 @@ class MyUserManager(BaseUserManager):
 
 # 自定义用户类
 #-------------
-
 class MyUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         verbose_name='email address',
@@ -71,10 +73,7 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     )
     name = models.CharField(max_length=20, unique=True)
     phone = models.CharField(max_length=20, unique=True)
-    qq = models.CharField(max_length=20)
-    website = models.CharField(max_length=50)
     unid = models.IntegerField(default=0)
-    image = models.ImageField()
     is_staff = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
@@ -93,7 +92,7 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
         # The user is identified by their email address
         return self.email
 
-    def __str__(self):              # __unicode__ on Python 2
+    def __str__(self):  # __unicode__ on Python 2
         return self.email
         
     @property
@@ -105,14 +104,11 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
 
         
 # 后台管理员用户
-# level 管理员级别  0（默认级别）：只可以管理自己的内容  1：可以管理同组的内容
 #---------------
-
 class SystemUserProfile(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='systemuser')
     nickname = models.CharField(max_length=20, unique=True)
     date_of_birth = models.DateField(null=True)
-    level = models.IntegerField(default=0) 
     
     def __str__(self):
         return self.user.email
@@ -121,7 +117,6 @@ class SystemUserProfile(models.Model):
 
 # 前台普通用户
 #-------------
-
 class UserProfile(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='user')
     nickname = models.CharField(max_length=20, unique=True)
@@ -130,5 +125,4 @@ class UserProfile(models.Model):
     
     def __str__(self):
         return self.user.email
-        
         

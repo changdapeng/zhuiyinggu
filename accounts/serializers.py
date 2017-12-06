@@ -13,9 +13,7 @@ UserProfile 序列化器：
 自定义 UserProfile 创建、更新时的用户保存操作。
 实现相应object的URL返回。
 """
-import traceback 
 
-from django.contrib.auth.models import Group, Permission
 from django.contrib.auth import get_user_model
 User = get_user_model() 
 
@@ -27,7 +25,6 @@ from accounts.models import SystemUserProfile, UserProfile
 
 # User 序列化器
 # ---------------
-
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='user-detail', lookup_field='pk')
     
@@ -67,8 +64,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 # SystemUserProfile 序列化器  
-# --------------------------
-      
+# -------------------------- 
 class SystemUserProfileSerializer(serializers.HyperlinkedModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='systemuserprofile-detail', lookup_field='nickname')
     user = UserSerializer(required=False) #嵌套UserSerializer()序列化器
@@ -117,7 +113,6 @@ class SystemUserProfileSerializer(serializers.HyperlinkedModelSerializer):
             
 # UserProfile 序列化器
 # --------------------
-
 class UserProfileSerializer(serializers.HyperlinkedModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='userprofile-detail', lookup_field='nickname')
     user = UserSerializer(required=False) #嵌套UserSerializer()序列化器
@@ -163,4 +158,6 @@ class UserProfileSerializer(serializers.HyperlinkedModelSerializer):
         user.save()
         
         return instance
+
+
 
