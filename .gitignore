@@ -3,7 +3,10 @@ zhuiyinggu/__pycache__/
 accounts/__pycache__/
 accounts/migrations/
 uwsgi.log
+uwsgi.ini
 uwsgi.pid
 my.conf
 blog/__pycache__/
 blog/migrations/
+data_manage/__pycache__/
+data_manage/migrations/
