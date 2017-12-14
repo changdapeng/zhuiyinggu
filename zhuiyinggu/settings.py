@@ -37,12 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',  # REST Framework 
+    'guardian',  # guardian 认证模块
+    'rest_framework.authtoken',
+    #'debug_toolbar',  # django-debug-toolbar
     'accounts.apps.AccountsConfig',
     'data_manage.apps.DataManageConfig',
-    'rest_framework',
-    'guardian',
-    'rest_framework.authtoken',
-  #  'debug_toolbar',  # django-debug-toolbar
+
 ]
 
 """
