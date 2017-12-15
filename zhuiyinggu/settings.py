@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'guardian',  # guardian 认证模块
     'rest_framework.authtoken',
     'django_filters',
+    'crispy_forms', # 提高DRF(Django REST Framework)过滤器在网页上的的可视化模块
     #'debug_toolbar',  # django-debug-toolbar
     'accounts.apps.AccountsConfig',
     'data_manage.apps.DataManageConfig',
@@ -191,10 +192,10 @@ REST_FRAMEWORK = {
     ),
 
     
-    # 设置过滤器 为 rest 的过滤器
-    'DEFAULT_FILTER_BACKENDS': (
-        'django_filters.rest_framework.DjangoFilterBackend',
-    ),
+    # # 设置过滤器 为 rest 的过滤器
+    # 'DEFAULT_FILTER_BACKENDS': (
+    #     'django_filters.rest_framework.DjangoFilterBackend',
+    # ),
 
 
     # 设置按用户和匿名用户限流
