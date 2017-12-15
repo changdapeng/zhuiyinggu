@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',  # REST Framework 
     'guardian',  # guardian 认证模块
     'rest_framework.authtoken',
+    'django_filters',
     #'debug_toolbar',  # django-debug-toolbar
     'accounts.apps.AccountsConfig',
     'data_manage.apps.DataManageConfig',
@@ -164,9 +165,9 @@ STATIC_ROOT='/data/zhuiyinggu/static'
 #MEDIA_ROOT = '/data/zhuiyinggu/media'
 
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
 
 
 AUTH_USER_MODEL = 'accounts.MyUser'
@@ -189,10 +190,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ),
 
-    '''
+    
     # 设置过滤器 为 rest 的过滤器
-    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
-    '''
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
+
 
     # 设置按用户和匿名用户限流
     'DEFAULT_THROTTLE_CLASSES': (
@@ -203,6 +206,8 @@ REST_FRAMEWORK = {
         'anon': '1000/day',
         'user': '100/day',
     },
+
+
     # 增加分页
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
