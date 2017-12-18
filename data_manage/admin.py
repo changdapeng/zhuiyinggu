@@ -4,7 +4,7 @@ data_manage/admin.py
 
 from django.contrib import admin
 
-from data_manage.models import Data, Book, Music, Video, Movie
+from data_manage.models import Data, Book, Music, Video, Movie, Game
 
 
 
@@ -23,6 +23,24 @@ class DataAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Data, DataAdmin)
+
+
+
+# Game Admin管理界面管理器
+# ------------------------
+class GameAdmin(admin.ModelAdmin):
+
+    list_display = ('name', 'description', 'game_type', 'game_step', 'seed_address', 'seed_type', 'creator', 'create_date', 'update_date',)
+    list_filter = ('game_type', 'game_step', 'seed_type', 'create_date',)
+    fieldsets = (
+        ('Book info', {'fields': ('name', 'description', 'game_type', 'game_step', 'seed_address', 'seed_type',)}),
+        ('create info', {'fields': ('creator', )}),
+    )
+    search_fields = ('name', 'game_type', 'game_step',)
+    ordering = ('name', 'game_type',)
+
+
+admin.site.register(Game, GameAdmin)
 
 
 

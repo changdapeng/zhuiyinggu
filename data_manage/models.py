@@ -45,25 +45,46 @@ class Data(models.Model):
 
 
 
-# # 游戏模型
-# # --------
-# class Game(models.Model):
-#     name = models.CharField(max_length=50)
-#     description = models.CharField(blank=True, max_length=200)
-#     step = models.CharField(choices=DATA_STEP, blank=True, max_length=50)
-#     data_type = models.CharField(choices= DATA_TYPE, blank=True, max_length=50)
-#     size = models.FloatField(blank=True, null=True)
-#     creator = models.CharField(max_length=200)
-#     create_date = models.DateField(blank=True, null=True)
-#     address = models.CharField(blank=True, max_length=200)
-#     address_type = models.CharField(choices=(('BD','百度云'), ('BT', 'BT种子')), blank=True, max_length=50)
-#     path = models.CharField(blank=True, max_length=200)
+# 游戏模型
+# --------
+class Game(models.Model):
+    GAME_TYPE = [
+        ('game_type1','射击'),
+        ('game_type2','第一人称射击'),
+        ('game_type3','第三人称射击'),
+        ('game_type4','动作'),
+        ('game_type5','角色扮演'),
+        ('game_type6','动作角色扮演'),
+        ('game_type7','策略'),
+        ('game_type8','竞速'),
+        ('game_type9','模拟器'),
+        ('game_type10','休闲'),
+    ]
+    GAME_STEP = [
+        ('movie_step1','待下载'),
+        ('movie_step2','已下载'),
+        ('movie_step3','已审核'),
+    ]
+    SEED_ADDRESS = [
+        ('seed_address1','百度云'),
+        ('seed_address2','迅雷'),
+    ]
+
+    name = models.CharField(max_length=50, unique=True)
+    description = models.TextField(blank=True, help_text="请填写相关描述信息和备注")
+    game_type = models.CharField(choices=GAME_TYPE, blank=True, max_length=20)
+    game_step = models.CharField(choices=GAME_STEP, blank=True, max_length=20)
+    seed_address = models.CharField(blank=True, max_length=200)
+    seed_type = models.CharField(choices=SEED_ADDRESS, blank=True, max_length=50)
+    creator = models.CharField(max_length=100)  # 该字段需为自动创建
+    # 想要使下面两个字段可以修改，可以使用default=date.today代替auto_now_add=True和auto_now=True
+    create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实力第一次创建时自动创建，不可以修改
+    update_date = models.DateField(blank=True, null=True, auto_now=True)  # 该字段在调用Model.save()时自动创建和更新，不可以修改
     
         
-#     def __str__(self):
+    def __str__(self):
         
-#         return self.name
-
+        return self.name
 
 
 
