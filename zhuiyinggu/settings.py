@@ -162,8 +162,8 @@ USE_TZ = False
 STATIC_URL = '/static/'
 STATIC_ROOT='/data/zhuiyinggu/static'
 
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = '/data/zhuiyinggu/media'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/data/zhuiyinggu/media'
 
 
 # STATICFILES_DIRS = (
