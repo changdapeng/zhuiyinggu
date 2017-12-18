@@ -88,24 +88,47 @@ class Data(models.Model):
 
 
 
-# # 音乐模型
-# # --------
-# class Music(models.Model):
-#     name = models.CharField(max_length=50)
-#     description = models.CharField(blank=True, max_length=200)
-#     step = models.CharField(choices=DATA_STEP, blank=True, max_length=50)
-#     data_type = models.CharField(choices= DATA_TYPE, blank=True, max_length=50)
-#     size = models.FloatField(blank=True, null=True)
-#     creator = models.CharField(max_length=200)
-#     create_date = models.DateField(blank=True, null=True)
-#     address = models.CharField(blank=True, max_length=200)
-#     address_type = models.CharField(choices=(('BD','百度云'), ('BT', 'BT种子')), blank=True, max_length=50)
-#     path = models.CharField(blank=True, max_length=200)
+# 音乐模型
+# --------
+class Music(models.Model):
+    # choice 参数使用列表格式，为了可以动态的构建；
+    # 列表元素使用元祖，防止后期修改列表内容时，导致已存数据的类型发生混淆；
+    MUSIC_FORMAT = [
+        ('music_format1','FLAC'),
+        ('music_format2','APE'),
+        ('music_format3','mp3'),
+        ('music_format4','WAV'),
+        ('music_format5','其他'),
+    ]
+    MUSIC_TYPE = [
+        ('music_type1','轻音乐'),
+        ('music_type2','流行歌曲'),
+        ('music_type3','其他'),
+    ]
+    MUSIC_STEP = [
+        ('book_step1','待下载'),
+        ('book_step2','已下载'),
+        ('book_step3','已审核'),
+    ]
+
+    name = models.CharField(max_length=50)
+    description = models.CharField(blank=True, max_length=200)
+    singer = models.CharField(blank=True, max_length=50)
+    album = models.CharField(blank=True, max_length=100)
+    music_format = models.CharField(choices= MUSIC_FORMAT, blank=True, max_length=20)
+    music_type = models.CharField(choices= MUSIC_TYPE, blank=True, max_length=20)
+    music_step = models.CharField(choices=MUSIC_STEP, blank=True, max_length=20)
+    # 经过认证的用户，方可进行上传文件
+    music_file = models.FileField(upload_to='date_manage/music/')  # 文件上传到MEDIA_ROOT/date_manage/music/路径下
+    creator = models.CharField(max_length=100)  # 该字段需为自动创建
+    # 想要使下面两个字段可以修改，可以使用default=date.today代替auto_now_add=True和auto_now=True
+    create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实力第一次创建时自动创建，不可以修改
+    update_date = models.DateField(blank=True, null=True, auto_now=True)  # 该字段在调用Model.save()时自动创建和更新，不可以修改
     
         
-#     def __str__(self):
+    def __str__(self):
         
-#         return self.name
+        return self.name
 
 
 
@@ -122,6 +145,7 @@ class Book(models.Model):
             ('book_type4','运维'),
             ('book_type5','数据库'),
             ('book_type6','前端'),
+            ('book_type7','测试'),
         ]],
         ('book_type7','历史'),
         ('book_type8','人物传记'),
@@ -142,10 +166,10 @@ class Book(models.Model):
     name = models.CharField(max_length=50, unique=True)  # 该字段不可以重复,并自动为该字段创建数据库索引（不需要单独设置db_index参数）
     description = models.CharField(blank=True, max_length=200, help_text="请填写相关描述信息")
     author = models.CharField(blank=True, max_length=50)
-    book_type = models.CharField(choices=BOOK_TYPE, max_length=50)
-    book_step = models.CharField(choices=BOOK_STEP, max_length=50)
+    book_type = models.CharField(choices=BOOK_TYPE, max_length=20)
+    book_step = models.CharField(choices=BOOK_STEP, max_length=20)
     # 经过认证的用户，方可进行上传文件
-    book_file = models.FileField(upload_to='date_manage/book/')  # 文件上传到MEDIA_ROOT/date_manage/book路径下
+    book_file = models.FileField(upload_to='date_manage/book/')  # 文件上传到MEDIA_ROOT/date_manage/book/路径下
     creator = models.CharField(max_length=100)  # 该字段需为自动创建
     # 想要使下面两个字段可以修改，可以使用default=date.today代替auto_now_add=True和auto_now=True
     create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实力第一次创建时自动创建，不可以修改
