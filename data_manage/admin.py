@@ -4,7 +4,7 @@ data_manage/admin.py
 
 from django.contrib import admin
 
-from data_manage.models import Data, Book, Music
+from data_manage.models import Data, Book, Music, Video
 
 
 
@@ -59,3 +59,21 @@ class BookAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Book, BookAdmin)
+
+
+
+# Video Admin管理界面管理器
+# ------------------------
+class VideoAdmin(admin.ModelAdmin):
+
+    list_display = ('name', 'description', 'video_type', 'video_step', 'seed_address', 'seed_type', 'creator', 'create_date', 'update_date',)
+    list_filter = ('video_type', 'video_step', 'seed_type', 'create_date',)
+    fieldsets = (
+        ('Book info', {'fields': ('name', 'description', 'video_type', 'video_step', 'seed_address', 'seed_type',)}),
+        ('create info', {'fields': ('creator', )}),
+    )
+    search_fields = ('name', 'video_type', 'video_step',)
+    ordering = ('name', 'video_type',)
+
+
+admin.site.register(Video, VideoAdmin)

@@ -69,7 +69,7 @@ class Data(models.Model):
 
 # # 电影模型
 # # --------
-# class Move(models.Model):
+# class Movie(models.Model):
 #     name = models.CharField(max_length=50)
 #     description = models.CharField(blank=True, max_length=200)
 #     step = models.CharField(choices=DATA_STEP, blank=True, max_length=50)
@@ -111,8 +111,8 @@ class Music(models.Model):
         ('book_step3','已审核'),
     ]
 
-    name = models.CharField(max_length=50)
-    description = models.CharField(blank=True, max_length=200)
+    name = models.CharField(max_length=50, unique=True)
+    description = models.CharField(blank=True, max_length=200, help_text="请填写相关描述信息")
     singer = models.CharField(blank=True, max_length=50)
     album = models.CharField(blank=True, max_length=100)
     music_format = models.CharField(choices= MUSIC_FORMAT, blank=True, max_length=20)
@@ -183,22 +183,40 @@ class Book(models.Model):
 
 
 
-# # 视频资料模型
-# # --------------
-# class Video(models.Model):
-#     name = models.CharField(max_length=50)
-#     description = models.CharField(blank=True, max_length=200)
-#     step = models.CharField(choices=DATA_STEP, blank=True, max_length=50)
-#     data_type = models.CharField(choices= DATA_TYPE, blank=True, max_length=50)
-#     size = models.FloatField(blank=True, null=True)
-#     creator = models.CharField(max_length=200)
-#     create_date = models.DateField(blank=True, null=True)
-#     address = models.CharField(blank=True, max_length=200)
-#     address_type = models.CharField(choices=(('BD','百度云'), ('BT', 'BT种子')), blank=True, max_length=50)
-#     path = models.CharField(blank=True, max_length=200)
+# 视频资料模型
+# --------------
+class Video(models.Model):
+    VIDEO_TYPE = [
+        ('video_type1','IT'),
+        ('video_type2','社会'),
+        ('video_type3','演讲'),
+        ('video_type4','科教'),
+        ('video_type5','纪录片'),
+        ('video_type6','其他'),
+    ]
+    VIDEO_STEP = [
+        ('video_step1','待下载'),
+        ('video_step2','已下载'),
+        ('video_step3','已审核'),
+    ]
+    SEED_ADDRESS = [
+        ('seed_address1','百度云'),
+        ('seed_address2','迅雷'),
+    ]
+
+    name = models.CharField(max_length=50, unique=True)
+    description = models.CharField(blank=True, max_length=200, help_text="请填写相关描述信息")
+    video_type = models.CharField(choices= VIDEO_TYPE, blank=True, max_length=20)
+    video_step = models.CharField(choices=VIDEO_STEP, blank=True, max_length=20)
+    seed_address = models.CharField(blank=True, max_length=200)
+    seed_type = models.CharField(choices=SEED_ADDRESS, blank=True, max_length=50)
+    creator = models.CharField(max_length=100)  # 该字段需为自动创建
+    # 想要使下面两个字段可以修改，可以使用default=date.today代替auto_now_add=True和auto_now=True
+    create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实力第一次创建时自动创建，不可以修改
+    update_date = models.DateField(blank=True, null=True, auto_now=True)  # 该字段在调用Model.save()时自动创建和更新，不可以修改
     
         
-#     def __str__(self):
+    def __str__(self):
         
-#         return self.name
+        return self.name
 
