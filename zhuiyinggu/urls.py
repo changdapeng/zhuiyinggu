@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^data_manage/', include('data_manage.urls')),
     # REST Framework 的登陆和注销视图URL
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     #url(r'^blog/', include('blog.urls')),
