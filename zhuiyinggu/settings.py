@@ -39,12 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',  # REST Framework 
     'guardian',  # guardian 认证模块
-    'rest_framework.authtoken',
-    'django_filters',
+    'rest_framework.authtoken',  # DRF token 认证
+    'django_filters',  # django-filter 过滤器插件
     'crispy_forms', # 提高DRF(Django REST Framework)过滤器在网页上的的可视化模块
     #'debug_toolbar',  # django-debug-toolbar
-    'accounts.apps.AccountsConfig',
-    'data_manage.apps.DataManageConfig',
+    'accounts.apps.AccountsConfig',  # 自定义用户、用户管理
+    'data_manage.apps.DataManageConfig',  # 数据、资料管理
+    'apk_manage.apps.ApkManageConfig',  # APP 版本管理
 
 ]
 
