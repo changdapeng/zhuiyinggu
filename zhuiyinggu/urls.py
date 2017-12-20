@@ -22,13 +22,15 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('accounts.urls')),
-    url(r'^data_manage/', include('data_manage.urls')),
+    url(r'^account/', include('accounts.urls')),
+    url(r'^data/', include('data_manage.urls')),
     url(r'^apk/', include('apk_manage.urls')),
+    url(r'^blog/', include('blog.urls')),
+    
     # REST Framework 的登陆和注销视图URL
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     # url(r'^api-token-auth/', views.obtain_auth_token),
-    #url(r'^blog/', include('blog.urls')),
+
 ]
 
 
