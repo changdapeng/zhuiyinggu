@@ -19,7 +19,7 @@ User = get_user_model()
 
 from rest_framework import serializers
 
-from accounts.models import SystemUserProfile, UserProfile
+from accounts.models import SystemUserProfile, UserProfile, SYSTEM_USER, COMMON_USER
 
 
 
@@ -85,7 +85,7 @@ class SystemUserProfileSerializer(serializers.HyperlinkedModelSerializer):
         user.set_password(user_data.pop('password'))
         user.is_admin = True        # 给创建的用户分配admin权限
         user.is_superuser = True    # 给创建的用户分配superuser权限
-        user.tag = "systemuser"
+        user.type = SYSTEM_USER
         user.save()
         systemuserprofile = SystemUserProfile.objects.create(user=user, **validated_data)
         return systemuserprofile
@@ -132,7 +132,7 @@ class UserProfileSerializer(serializers.HyperlinkedModelSerializer):
         user.set_password(user_data.pop('password'))
         #user.is_admin = True        # 给创建的用户分配admin权限
         #user.is_superuser = True    # 给创建的用户分配superuser权限
-        user.tag = "user"
+        user.type = COMMON_USER
         user.save()
         userprofile = UserProfile.objects.create(user=user, **validated_data)
         return userprofile
