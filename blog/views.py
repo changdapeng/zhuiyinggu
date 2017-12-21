@@ -18,7 +18,6 @@ from rest_framework import filters
 from rest_framework.decorators import list_route
 
 from django_filters.rest_framework import DjangoFilterBackend
-import django_filters 
 from django_filters import rest_framework
 
 from blog.permissions import IsSystemUserOrReadOnly, IsAuthenticatedOrReadOnly, ReadOnly
@@ -28,7 +27,7 @@ from blog.serializers import BlogSerializer
 
 
 # Blog 过滤器
-# ------------------
+# -----------
 class BlogFilter(rest_framework.FilterSet):
     """
     过滤的字段为 title，用于为不同的blog实现不同的接口。

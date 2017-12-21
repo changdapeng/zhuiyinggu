@@ -7,29 +7,16 @@ apk_manage/views.py
 
 支持 用户认证、权限控制、过滤器、限流器、分页。
 """
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.views.generic import View
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import Group
 from django.contrib.auth import get_user_model
 User = get_user_model()
-import django_filters
 
 from rest_framework import viewsets
-from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import filters
-from rest_framework import status
-from rest_framework.decorators import detail_route, list_route
-from rest_framework import permissions
-from rest_framework.authtoken.models import Token
+from rest_framework.decorators import list_route
 
-from guardian.models import UserObjectPermission
-from guardian.shortcuts import assign_perm, get_perms 
 
 from django_filters.rest_framework import DjangoFilterBackend
-import django_filters 
 from django_filters import rest_framework
 
 from apk_manage.permissions import IsSystemUserOrReadOnly, IsAuthenticatedOrReadOnly, ReadOnly
@@ -40,7 +27,6 @@ from apk_manage.serializers import ApkVersionSerializer
 
 # ApkVersion 过滤器
 # ------------------
-
 class ApkVersionFilter(rest_framework.FilterSet):
     """
     过滤的字段为 name，用于为不同的apk实现不同的接口。
@@ -55,7 +41,6 @@ class ApkVersionFilter(rest_framework.FilterSet):
 
 # ApkVersion 版本控制
 # ------------------
-
 class ApkVersionViewSet(viewsets.ModelViewSet):
     """
     用于进行 apk的版本控制。

@@ -7,7 +7,6 @@ from django.db import models
 
 
 
-
 # 游戏模型
 # --------
 class Game(models.Model):

@@ -24,7 +24,7 @@ from accounts.models import SystemUserProfile, UserProfile, SYSTEM_USER, COMMON_
 
 
 # User 序列化器
-# ---------------
+# ------------
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='user-detail', lookup_field='pk')
     
@@ -40,7 +40,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         创建User实例的时候设置密码，并增加相应权限
         """ 
         user = User.objects.create(**validated_data)
-        user.set_password(validated_data.pop('password'))
+        user.set_password(validated_data.pop('password'))  # 修改密码：将python字符串使用MD5加密
+        # 使用authenticate()来验证用户 user = authenticate(username='john', password='secret')
         user.is_admin = True
         user.is_superuser = True
         user.save()

@@ -9,7 +9,6 @@ from django.db import models
 
 # apk版本控制 模型
 # ----------------
-
 class ApkVersion(models.Model):
     name = models.CharField(max_length=200)
     version = models.CharField(max_length=200)

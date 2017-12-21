@@ -16,10 +16,6 @@ User = get_user_model()
 
 from rest_framework import permissions
 
-from guardian.models import UserObjectPermission
-from guardian.shortcuts import assign_perm, get_perms
-
-from accounts.models import SystemUserProfile, UserProfile
 
 
 MY_SAFE_METHODS = ('GET', 'HEAD', 'OPTIONS',)

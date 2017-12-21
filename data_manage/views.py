@@ -7,37 +7,23 @@ data_manage/views.py
 
 支持 用户认证、权限控制、过滤器、限流器、分页。
 """
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.views.generic import View
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import Group
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
 from rest_framework import viewsets
-from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import filters
-from rest_framework import status
-from rest_framework.decorators import detail_route, list_route
-from rest_framework import permissions
-from rest_framework.authtoken.models import Token
-
-from guardian.models import UserObjectPermission
-from guardian.shortcuts import assign_perm, get_perms 
 
 from data_manage.permissions import IsSystemUserOrReadOnly, IsAuthenticatedOrReadOnly, ReadOnly
 from data_manage.models import Game, Movie, Music, Book, Video
 from data_manage.serializers import GameSerializer, MovieSerializer, MusicSerializer, BookSerializer, VideoSerializer
 
-import django_filters
 from django_filters import rest_framework
 from django_filters.rest_framework import DjangoFilterBackend
 
 
 # Game 过滤器
-# ------------------
+# -----------
 class GameFilter(rest_framework.FilterSet):
     """
     过滤的字段为 name，用于为不同的apk实现不同的接口。
@@ -51,7 +37,7 @@ class GameFilter(rest_framework.FilterSet):
 
 
 # Game 版本控制
-# ------------------
+# -------------
 class GameViewSet(viewsets.ModelViewSet):
     """
     用于进行 game管理。
@@ -94,7 +80,7 @@ class GameViewSet(viewsets.ModelViewSet):
 
 
 # Movie 过滤器
-# ------------------
+# ------------
 class MovieFilter(rest_framework.FilterSet):
     """
     过滤的字段为 name，用于为不同的apk实现不同的接口。
@@ -108,7 +94,7 @@ class MovieFilter(rest_framework.FilterSet):
 
 
 # Movie 版本控制
-# ------------------
+# --------------
 class MovieViewSet(viewsets.ModelViewSet):
     """
     用于进行 game管理。
@@ -152,7 +138,7 @@ class MovieViewSet(viewsets.ModelViewSet):
 
 
 # Music 过滤器
-# ------------------
+# ------------
 class MusicFilter(rest_framework.FilterSet):
     """
     过滤的字段为 name，用于为不同的apk实现不同的接口。
@@ -166,7 +152,7 @@ class MusicFilter(rest_framework.FilterSet):
 
 
 # Music 版本控制
-# ------------------
+# --------------
 class MusicViewSet(viewsets.ModelViewSet):
     """
     用于进行 game管理。
@@ -210,7 +196,7 @@ class MusicViewSet(viewsets.ModelViewSet):
 
 
 # Book 过滤器
-# ------------------
+# -----------
 class BookFilter(rest_framework.FilterSet):
     """
     过滤的字段为 name，用于为不同的apk实现不同的接口。
@@ -224,7 +210,7 @@ class BookFilter(rest_framework.FilterSet):
 
 
 # Book 版本控制
-# ------------------
+# -------------
 class BookViewSet(viewsets.ModelViewSet):
     """
     用于进行 Book 管理。
@@ -268,7 +254,7 @@ class BookViewSet(viewsets.ModelViewSet):
 
 
 # Video 过滤器
-# ------------------
+# ------------
 class VideoFilter(rest_framework.FilterSet):
     """
     过滤的字段为 name，用于为不同的apk实现不同的接口。
@@ -282,7 +268,7 @@ class VideoFilter(rest_framework.FilterSet):
 
 
 # Video 版本控制
-# ------------------
+# --------------
 class VideoViewSet(viewsets.ModelViewSet):
     """
     用于进行 game管理。

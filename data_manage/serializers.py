@@ -6,7 +6,6 @@ Game、Movie、Music、Book、Video 的序列化器：
 """
 from django.contrib.auth import get_user_model
 User = get_user_model() 
-from django.contrib.auth.models import Group, Permission
 
 from rest_framework import serializers
 

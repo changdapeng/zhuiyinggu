@@ -6,7 +6,6 @@ ApkVersion 序列化器：
 """
 from django.contrib.auth import get_user_model
 User = get_user_model() 
-from django.contrib.auth.models import Group, Permission
 
 from rest_framework import serializers
 
@@ -16,7 +15,6 @@ from apk_manage.models import ApkVersion
 
 # ApkVersion模型对应的序列化器
 # ----------------------------
-
 class ApkVersionSerializer(serializers.HyperlinkedModelSerializer):
     """
     对全部字段序列化，并返回每个object对应的URL

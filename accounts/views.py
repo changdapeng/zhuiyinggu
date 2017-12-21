@@ -10,32 +10,23 @@ accounts/views.py
 
 import re
 
-from django.shortcuts import render
+
 from django.http import HttpResponse
-from django.views.generic import View
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import Group
+from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
 User = get_user_model()
-import django_filters
 
-from rest_framework import generics
 from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import filters
-from rest_framework import permissions
 from rest_framework.authtoken.models import Token
-from rest_framework import status
-from rest_framework.decorators import detail_route, list_route
-from rest_framework.throttling import UserRateThrottle, ScopedRateThrottle 
+from rest_framework.decorators import detail_route
+from rest_framework.throttling import UserRateThrottle
 
 from django_filters.rest_framework import DjangoFilterBackend
 import django_filters 
 from django_filters import rest_framework
-
-from guardian.models import UserObjectPermission
-from guardian.shortcuts import assign_perm, get_perms 
 
 from accounts.models import SystemUserProfile, UserProfile
 from accounts.serializers import UserSerializer, UserProfileSerializer, SystemUserProfileSerializer

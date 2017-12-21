@@ -10,7 +10,6 @@ DELETE（注销模型对象）
 """
 from django.conf.urls import url, include
 
-from rest_framework import renderers
 from rest_framework.routers import DefaultRouter
 
 from data_manage import views

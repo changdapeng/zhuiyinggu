@@ -16,10 +16,6 @@ User = get_user_model()
 
 from rest_framework import permissions
 
-from guardian.models import UserObjectPermission
-from guardian.shortcuts import assign_perm, get_perms
-
-from data_manage.models import Game, Movie, Music, Book, Video
 from accounts.models import SYSTEM_USER
 from accounts.permissions import MY_SAFE_METHODS
 
