@@ -133,7 +133,7 @@ class Music(models.Model):
     music_type = models.CharField(choices= MUSIC_TYPE, blank=True, max_length=20)
     music_step = models.CharField(choices=MUSIC_STEP, blank=True, max_length=20)
     # 经过认证的用户，方可进行上传文件
-    music_file = models.FileField(upload_to='date_manage/music/')  # 文件上传到MEDIA_ROOT/date_manage/music/路径下
+    music_file = models.FileField(upload_to='date_manage/music/', blank=True)  # 文件上传到MEDIA_ROOT/date_manage/music/路径下
     creator = models.CharField(max_length=100)  # 该字段需为自动创建
     # 想要使下面两个字段可以修改，可以使用default=date.today代替auto_now_add=True和auto_now=True
     create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实力第一次创建时自动创建，不可以修改
@@ -183,7 +183,7 @@ class Book(models.Model):
     book_type = models.CharField(choices=BOOK_TYPE, max_length=20)
     book_step = models.CharField(choices=BOOK_STEP, max_length=20)
     # 经过认证的用户，方可进行上传文件
-    book_file = models.FileField(upload_to='date_manage/book/')  # 文件上传到MEDIA_ROOT/date_manage/book/路径下
+    book_file = models.FileField(upload_to='date_manage/book/', blank=True)  # 文件上传到MEDIA_ROOT/date_manage/book/路径下
     creator = models.CharField(max_length=100)  # 该字段需为自动创建
     # 想要使下面两个字段可以修改，可以使用default=date.today代替auto_now_add=True和auto_now=True
     create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实力第一次创建时自动创建，不可以修改
