@@ -40,10 +40,14 @@ class Game(models.Model):
     seed_type = models.CharField(choices=SEED_ADDRESS, blank=True, max_length=50)
     creator = models.CharField(max_length=100)  # 该字段需为自动创建
     # 想要使下面两个字段可以修改，可以使用default=date.today代替auto_now_add=True和auto_now=True
-    create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实力第一次创建时自动创建，不可以修改
+    create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实例第一次创建时自动创建，不可以修改
     update_date = models.DateField(blank=True, null=True, auto_now=True)  # 该字段在调用Model.save()时自动创建和更新，不可以修改
     
-        
+
+    class Meta:
+        ordering = ('name',)
+    
+
     def __str__(self):
         
         return self.name
@@ -95,6 +99,10 @@ class Movie(models.Model):
     create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实力第一次创建时自动创建，不可以修改
     update_date = models.DateField(blank=True, null=True, auto_now=True)  # 该字段在调用Model.save()时自动创建和更新，不可以修改
     
+
+    class Meta:
+        ordering = ('name',)
+    
         
     def __str__(self):
         
@@ -138,6 +146,10 @@ class Music(models.Model):
     # 想要使下面两个字段可以修改，可以使用default=date.today代替auto_now_add=True和auto_now=True
     create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实力第一次创建时自动创建，不可以修改
     update_date = models.DateField(blank=True, null=True, auto_now=True)  # 该字段在调用Model.save()时自动创建和更新，不可以修改
+    
+
+    class Meta:
+        ordering = ('name',)
     
         
     def __str__(self):
@@ -189,6 +201,10 @@ class Book(models.Model):
     create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实力第一次创建时自动创建，不可以修改
     update_date = models.DateField(blank=True, null=True, auto_now=True)  # 该字段在调用Model.save()时自动创建和更新，不可以修改
     
+
+    class Meta:
+        ordering = ('name',)
+    
         
     def __str__(self):
         
@@ -229,7 +245,11 @@ class Video(models.Model):
     create_date = models.DateField(blank=True, null=True, auto_now_add=True)  # 该字段在实力第一次创建时自动创建，不可以修改
     update_date = models.DateField(blank=True, null=True, auto_now=True)  # 该字段在调用Model.save()时自动创建和更新，不可以修改
     
-        
+    
+    class Meta:
+        ordering = ('name',)
+    
+       
     def __str__(self):
         
         return self.name
