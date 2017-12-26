@@ -163,6 +163,7 @@ USE_I18N = True
 
 USE_L10N = True
 
+# 设置激活或停用对时区的支持
 # 修改数据库是MySQL时，配置为False，使得TIME_ZONE的设置生效
 #USE_TZ = True
 USE_TZ = False
