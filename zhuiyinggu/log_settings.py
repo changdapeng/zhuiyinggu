@@ -4,7 +4,8 @@ logging module settings for zhuiyinggu project.
 """
 
 import os
-from zhuiyinggu.settings import BASE_DIR
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 

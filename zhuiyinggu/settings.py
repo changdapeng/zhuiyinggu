@@ -24,8 +24,8 @@ SECRET_KEY = '8148n1#iw@eqdfj7@$uh^o8+ha&6tzb*6uz&240001b+d!pai('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # 仅当 DEBUG 设置为True时才启用日志记录
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ['*',]
 
@@ -44,10 +44,21 @@ INSTALLED_APPS = [
     'django_filters',  # django-filter 过滤器插件
     'crispy_forms', # 提高DRF(Django REST Framework)过滤器在网页上的的可视化模块
     #'debug_toolbar',  # django-debug-toolbar
+    # 'social_django',  # social-app-django
     'accounts.apps.AccountsConfig',  # 自定义用户、用户管理
     'data_manage.apps.DataManageConfig',  #  数据、资料管理
     'apk_manage.apps.ApkManageConfig',  # APP 版本管理
     'blog.apps.BlogConfig',  # Blog 管理
+
+    # 可能会用到的app
+    #'oauth2_provider',
+    #'social_django',
+    #'rest_framework_social_oauth2',
+    #'corsheaders',
+    ####'kingadmin',
+    ####'management',
+    ####'mentor',
+
 
 ]
 
@@ -77,6 +88,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # 可能会用到的中间件
+    #'corsheaders.middleware.CorsMiddleware',
+    #'django.middleware.common.CommonMiddleware',
+    #'web.utils.middleware.CustomLoginSessionMiddleware',
 ]
 
 ROOT_URLCONF = 'zhuiyinggu.urls'
@@ -85,6 +101,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
+        # 可能用到的配置
+        #'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,6 +110,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # # social-app-django 配置,可能会用到
+                # 'social_django.context_processors.backends',  # for oauth2
+                # 'social_django.context_processors.login_redirect',  # for oauth2
             ],
         },
     },
@@ -100,27 +121,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'zhuiyinggu.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# 使用sqlite3数据库
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
-
-# 使用MySQL数据库
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'init_command': 'SET storage_engine=INNODB',
-        'OPTIONS': {
-            'read_default_file': '/home/zyg/zhuiyinggu/my.conf',
-        },
-    }
-}
 
 
 # Password validation
@@ -171,75 +172,69 @@ USE_L10N = True
 #USE_TZ = True
 USE_TZ = False
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATIC_URL = '/static/'
 STATIC_ROOT='/data/zhuiyinggu/static'
+# 可能会用到的配置
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static',)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/data/zhuiyinggu/media'
 
 
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, "static"),
-# )
 
 
+# 可能会用到的配置
+#CORS_ORIGIN_ALLOW_ALL = True
+
+
+
+
+
+# 指定使用自定义的用户模型
 AUTH_USER_MODEL = 'accounts.MyUser'
 
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend', # default
+    # 可能会用到的配置
+    # 'rest_framework_social_oauth2.backends.DjangoOAuth2',
+    # 'web.view.verify_view.CustomBackend',
+    # # #第三方认证登录配置，微博、微信、QQ
+    # 'social_core.backends.weibo.WeiboOAuth2',
+    # 'social_core.backends.qq.QQOAuth2',
+    # 'social_core.backends.weixin.WeixinOAuth',
+    'django.contrib.auth.backends.ModelBackend',  # default
     'guardian.backends.ObjectPermissionBackend',
 )
+
+
+# SOCIAL_AUTH_WEIBO_KEY = '23xxxxxxx'  # 微博
+# SOCIAL_AUTH_TWITTER_SECRET = '2c60B652xxxxcxxxxxxxxx'  # 微博
+#
+# SOCIAL_AUTH_QQ_KEY = '0lcx9Vd0R4oVfLan'  # QQ
+# SOCIAL_AUTH_QQ_SECRET = '1106683989'  # QQ
+#
+# SOCIAL_AUTH_WEIXIN_KEY = 'foobar'  # 微信
+# SOCIAL_AUTH_WEIXIN_SECRET = 'bazqux'  # 微信
+#
+# #第三方登录成功后跳转页面,这里跳转的主页
+# SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/index/'
+
+
 
 # 导入 logging 日志配置
 from zhuiyinggu.log_settings  import *
 
+# 导入数据库配置
+from zhuiyinggu.database_settings import *
 
-# REST Framework 相关设置
-# 其设置 全为 “全局设置”
-# -----------------------
-
-REST_FRAMEWORK = {
-
-    #设置认证方式 为 rest 的token认证
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-
-    
-    # # 设置过滤器 为 rest 的过滤器
-    # 'DEFAULT_FILTER_BACKENDS': (
-    #     'django_filters.rest_framework.DjangoFilterBackend',
-    # ),
+# 导入 REST Framework 配置
+from zhuiyinggu.DRF_settings import *
 
 
-    # 设置按用户和匿名用户限流
-    'DEFAULT_THROTTLE_CLASSES': (
-        'rest_framework.throttling.AnonRateThrottle',
-        'rest_framework.throttling.UserRateThrottle',
-    ),
-    'DEFAULT_THROTTLE_RATES': {
-        'anon': '1000/day',
-        'user': '100/day',
-    },
 
-
-    # 增加分页
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
-
-
-    # 设置按作用域限流
-    'DEFAULT_THROTTLE_CLASSES': (
-        'rest_framework.throttling.ScopedRateThrottle',
-    ),
-    'DEFAULT_THROTTLE_RATES': {
-        'user': '1000/day',
-        'systemuserprofile': '1000/day',
-        'userprofile': '1000/day',
-    }
-
-}
 

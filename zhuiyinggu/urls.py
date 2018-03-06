@@ -30,6 +30,8 @@ urlpatterns = [
     # REST Framework 的登陆和注销视图URL
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     # url(r'^api-token-auth/', views.obtain_auth_token),
+    # social-app-django 认证
+    # url('', include('social_django.urls', namespace='social')),
 
 ]
 
