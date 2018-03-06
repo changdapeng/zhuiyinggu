@@ -34,15 +34,7 @@ urlpatterns = [
 ]
 
 
-
-if settings.DEBUG is False:
-    urlpatterns += patterns('',
-        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.STATIC_ROOT,
-        }),
-    )
-
-else:
-#    import debug_toolbar
-    urlpatterns = [
+# import debug_toolbar
+urlpatterns = [
  #       url(r'^__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns

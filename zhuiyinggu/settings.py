@@ -23,13 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8148n1#iw@eqdfj7@$uh^o8+ha&6tzb*6uz&240001b+d!pai('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# 仅当 DEBUG 设置为True时才启用日志记录
+# DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -102,6 +103,7 @@ WSGI_APPLICATION = 'zhuiyinggu.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# 使用sqlite3数据库
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
@@ -152,7 +154,8 @@ PASSWORD_HASHERS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
 
 # 设置为上海的UTC时间
@@ -190,6 +193,8 @@ AUTHENTICATION_BACKENDS = (
     'guardian.backends.ObjectPermissionBackend',
 )
 
+# 导入 logging 日志配置
+from zhuiyinggu.log_settings  import *
 
 
 # REST Framework 相关设置

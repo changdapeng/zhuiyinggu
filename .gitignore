@@ -14,3 +14,4 @@ apk_manage/__pycache__/
 apk_manage/migrations/
 blog/__pycache__/
 blog/migrations/
+log/
