@@ -10,7 +10,6 @@ accounts/views.py
 
 import re
 
-
 from django.http import HttpResponse
 from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
@@ -360,22 +359,32 @@ class GetToken(APIView):
         
         # 判断name的格式并判断为User的哪一字段
         if re.search('@', name):
-            get_user = User.objects.get(email = name)
+            try:
+                get_user = User.objects.get(email = name)
+            except Exception as e:
+                return HttpResponse('user is not exits...')
+
         elif re.match(r'^[0-9]{11}$', name):
-            get_user = User.objects.get(phone = name)
+            try:
+                get_user = User.objects.get(phone = name)
+            except Exception as e:
+                return HttpResponse('user is not exits...')
         else:
-            get_user = User.objects.get(name = name)
+            try:
+                get_user = User.objects.get(name = name)
+            except Exception as e:
+                return HttpResponse('user is not exits...')
         
         email = get_user.email
         password = request.data.get('password')
         user = authenticate(email=email, password=password)
-        
+
         if user:
             if user.is_active:
                 token = Token.objects.get_or_create(user=user)
                 return Response(token[0].key)
             else:
-                return HttpResponse("Your Rango account is disabled.")
+                return HttpResponse("Your account is disabled.")
         else:
             print ("Invalid login details: {0}, {1}".format(email, password))
             return HttpResponse("Invalid login details supplied.")

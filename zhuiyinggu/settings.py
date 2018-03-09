@@ -32,15 +32,15 @@ ALLOWED_HOSTS = ['*',]
 
 # Application definition
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
+    'django.contrib.admin',  # Django 默认的管理后台
+    'django.contrib.auth',  # 包含认证框架的核心和默认的模型
+    'django.contrib.contenttypes',  # Django内容类型系统，它允许权限与你创建的模型关联
+    'django.contrib.sessions',  # 使用数据库支持的会话
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',  # REST Framework 
     'guardian',  # guardian 认证模块
-    'rest_framework.authtoken',  # DRF token 认证
+    'rest_framework.authtoken',  # 使用 DRF token 认证
     'django_filters',  # django-filter 过滤器插件
     'crispy_forms', # 提高DRF(Django REST Framework)过滤器在网页上的的可视化模块
     #'debug_toolbar',  # django-debug-toolbar
@@ -58,34 +58,16 @@ INSTALLED_APPS = [
     ####'kingadmin',
     ####'management',
     ####'mentor',
-
-
 ]
 
-"""
-DEBUG_TOOLBAR_PANELS = [
-    'debug_toolbar.panels.versions.VersionsPanel',
-    'debug_toolbar.panels.timer.TimerPanel',
-    'debug_toolbar.panels.settings.SettingsPanel',
-    'debug_toolbar.panels.headers.HeadersPanel',
-    'debug_toolbar.panels.request.RequestPanel',
-    'debug_toolbar.panels.sql.SQLPanel',
-    'debug_toolbar.panels.staticfiles.StaticFilesPanel',
-    'debug_toolbar.panels.templates.TemplatesPanel',
-    'debug_toolbar.panels.cache.CachePanel',
-    'debug_toolbar.panels.signals.SignalsPanel',
-    'debug_toolbar.panels.logging.LoggingPanel',
-    'debug_toolbar.panels.redirects.RedirectsPanel',
-]
-"""
 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',  # 跨请求管理 sessions，会话功能
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  # 使用会话将用户与请求关联起来
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
@@ -95,7 +77,7 @@ MIDDLEWARE = [
     #'web.utils.middleware.CustomLoginSessionMiddleware',
 ]
 
-ROOT_URLCONF = 'zhuiyinggu.urls'
+
 
 TEMPLATES = [
     {
@@ -118,87 +100,12 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'zhuiyinggu.wsgi.application'
-
-
-
-
-
-# Password validation
-# https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
-
-
-PASSWORD_HASHERS = [
-    'django.contrib.auth.hashers.Argon2PasswordHasher',  # 优先使用argon2作为默认存储算法
-    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
-    'django.contrib.auth.hashers.BCryptPasswordHasher',
-]
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.11/topics/i18n/
-
-#LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'zh-Hans'
-
-
-# 设置为上海的UTC时间
-#TIME_ZONE = 'UTC'
-TIME_ZONE = 'Asia/Shanghai'
-
-USE_I18N = True
-
-USE_L10N = True
-
-# 设置激活或停用对时区的支持
-# 修改数据库是MySQL时，配置为False，使得TIME_ZONE的设置生效
-#USE_TZ = True
-USE_TZ = False
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-STATIC_URL = '/static/'
-STATIC_ROOT='/data/zhuiyinggu/static'
-# 可能会用到的配置
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static',)
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, "static"),
-# )
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = '/data/zhuiyinggu/media'
-
-
-
-
-# 可能会用到的配置
-#CORS_ORIGIN_ALLOW_ALL = True
-
-
-
 
 
 # 指定使用自定义的用户模型
 AUTH_USER_MODEL = 'accounts.MyUser'
 
+# 认证后台
 AUTHENTICATION_BACKENDS = (
     # 可能会用到的配置
     # 'rest_framework_social_oauth2.backends.DjangoOAuth2',
@@ -225,11 +132,98 @@ AUTHENTICATION_BACKENDS = (
 # SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/index/'
 
 
+# Password validation
+# https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
 
-# 导入 logging 日志配置
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',  # 优先使用 argon2 作为默认存储算法
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+]
+
+
+# Internationalization
+# https://docs.djangoproject.com/en/1.11/topics/i18n/
+
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
+
+# 设置为上海的UTC时间
+#TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
+
+USE_I18N = True
+
+USE_L10N = True
+
+# 设置激活或停用对时区的支持
+# 修改数据库是MySQL时，配置为False，使得TIME_ZONE的设置生效
+#USE_TZ = True
+USE_TZ = False
+
+ROOT_URLCONF = 'zhuiyinggu.urls'
+
+WSGI_APPLICATION = 'zhuiyinggu.wsgi.application'
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+STATIC_URL = '/static/'
+STATIC_ROOT='/data/zhuiyinggu/static'
+# 可能会用到的配置
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static',)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/data/zhuiyinggu/media'
+
+
+# 可能会用到的配置
+#CORS_ORIGIN_ALLOW_ALL = True
+
+
+
+"""
+DEBUG_TOOLBAR_PANELS = [
+    'debug_toolbar.panels.versions.VersionsPanel',
+    'debug_toolbar.panels.timer.TimerPanel',
+    'debug_toolbar.panels.settings.SettingsPanel',
+    'debug_toolbar.panels.headers.HeadersPanel',
+    'debug_toolbar.panels.request.RequestPanel',
+    'debug_toolbar.panels.sql.SQLPanel',
+    'debug_toolbar.panels.staticfiles.StaticFilesPanel',
+    'debug_toolbar.panels.templates.TemplatesPanel',
+    'debug_toolbar.panels.cache.CachePanel',
+    'debug_toolbar.panels.signals.SignalsPanel',
+    'debug_toolbar.panels.logging.LoggingPanel',
+    'debug_toolbar.panels.redirects.RedirectsPanel',
+]
+"""
+
+
+
+# 导入 logging日志 配置
 from zhuiyinggu.log_settings  import *
 
-# 导入数据库配置
+# 导入 数据库 配置
 from zhuiyinggu.database_settings import *
 
 # 导入 REST Framework 配置

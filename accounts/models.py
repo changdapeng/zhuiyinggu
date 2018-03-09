@@ -5,6 +5,7 @@ MyUser：自定义 User
 SystemUserProfile：后台用户，外键于MyUser
 UserProfile：前台用户，外键于MyUser
 """
+
 from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser, PermissionsMixin
@@ -12,19 +13,19 @@ from django.contrib.auth.models import (
 from django.conf import settings
 
 
-SYSTEM_USER = 'system_user' #后台 用户
-COMMON_USER = 'common_user' #普通 用户
+
+SYSTEM_USER = 'system_user' # 后台用户
+COMMON_USER = 'common_user' # 普通用户
 
 
 
-
-# MyUser模型管理器
+# MyUser 模型管理器
 #----------------
 class MyUserManager(BaseUserManager):
     def create_user(self, email, name, phone, unid, password=None):
         """
         Creates and saves a User with the given email, date of
-        birth and password.
+        birth and password ...
         """
         if not email:
             raise ValueError('Users must have an email address')
@@ -35,7 +36,7 @@ class MyUserManager(BaseUserManager):
             phone=phone,
             unid=unid,
         )
-        user.is_superuser = False
+        user.is_superuser = False  # 指定此用户具有所有权限，而不显式分配它们。
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -52,7 +53,7 @@ class MyUserManager(BaseUserManager):
             unid=unid,
         )
         user.is_admin = True
-        user.is_superuser = True
+        user.is_superuser = True  # 指定此用户具有所有权限，而不显式分配它们。
         user.save(using=self._db)
         return user
 
@@ -69,15 +70,16 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=20, unique=True)
     phone = models.CharField(max_length=20, unique=True)
     unid = models.IntegerField(default=0)
-    is_staff = models.BooleanField(default=True)
-    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=True)  # 如果允许用户访问管理网站，则设置True。
+    is_active = models.BooleanField(default=True)  # 如果用户帐户当前处于活动状态，则设置True。
     is_admin = models.BooleanField(default=False)
     type = models.CharField(max_length=20, default=COMMON_USER)
     
     objects = MyUserManager()
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name', 'phone', 'unid']
+    USERNAME_FIELD = 'email'  # 一个字符串，表示User模型上用于唯一标识符的字段的名称
+    EMAIL_FIELD = 'email'  # 一个字符串，描述User模型上电子邮件字段的名称。该值由get_email_field_name()返回，默认值为'email'。
+    REQUIRED_FIELDS = ['name', 'phone', 'unid']  # 当通过createsuperuser管理命令创建一个用户时，用于提示的一个字段名称列表。
 
     def get_full_name(self):
         # The user is identified by their email address
