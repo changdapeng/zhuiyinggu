@@ -23,6 +23,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'init_command': 'SET storage_engine=INNODB',
         'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",  # 设置存储引擎启用严格模式，非法数据值被拒绝
             'read_default_file': '/home/zyg/zhuiyinggu/zhuiyinggu/my.conf',
         },
     }
