@@ -52,8 +52,8 @@ class UserFilter(rest_framework.FilterSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-      
-    permission_classes = (IsAuthenticatedOrReadOnlyOrCreate, IsSystemUserOrOwnerOrReadOnlyOrCreate)    
+
+    permission_classes = (IsAuthenticatedOrReadOnlyOrCreate, IsSystemUserOrOwnerOrReadOnlyOrCreate)
 
     # 指定使用 过滤器功能、排序过滤器功能、搜索过滤器功能
     filter_backends = (DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter,)
